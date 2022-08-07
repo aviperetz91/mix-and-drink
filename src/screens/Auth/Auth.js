@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, ImageBackground, Platform } from 'react-native';
+import { View, ImageBackground, Platform, Linking } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Button, Text, Input, Item, Icon, Spinner } from 'native-base';
 import Header from '../../components/Header/Header';
@@ -102,6 +102,19 @@ const Auth = props => {
                                         onChangeText={(input) => changeTextHandler('password', input)}
                                     />
                                 </Item>
+                            {mode === 'signup' && 
+                                <Text style={styles.helperSmallText}>
+                                    By Clicking "Sign Up" I agree that I have read and accepted the 
+                                    <Text 
+                                        style={styles.link}
+                                        onPress={() => Linking.openURL('https://mixdrinks-user-agreement.herokuapp.com/')}
+                                    > User Agreement</Text> & 
+                                    <Text 
+                                        style={styles.link}
+                                        onPress={() => Linking.openURL('https://www.freeprivacypolicy.com/live/1a890893-ec71-458b-9b8b-716b9e28d9c3')}
+                                    > Privacy Policy</Text>.
+                                </Text>
+                            }
                             </View>
                             <View>
                                 <Button
@@ -111,7 +124,7 @@ const Auth = props => {
                                     onPress={authHandler}
                                 >
                                     <Text style={styles.buttonText}>
-                                        {mode === 'login' ? 'LOGIN' : 'SIGN UP'}
+                                        {mode === 'login' ? 'Login' : 'Sign Up'}
                                     </Text>
                                 </Button>
                                 {mode === 'login' &&

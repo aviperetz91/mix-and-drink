@@ -21,6 +21,7 @@
 		A2A4EBFA280739F19DF1D299 /* libPods-the_cocktail_book.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B62FD78C4DC10314D778A4F2 /* libPods-the_cocktail_book.a */; };
 		E7330FCB2597E35D00FB9713 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7330FCA2597E35D00FB9713 /* GoogleService-Info.plist */; };
 		E75A900025C37BA30021C459 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = E75A8FFF25C37BA30021C459 /* main.jsbundle */; };
+		E7D8CB95289C8C2500732257 /* libswiftWebKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D8CB94289C8C2500732257 /* libswiftWebKit.tbd */; };
 		E7DF1C89263E1484002C426E /* assets in Resources */ = {isa = PBXBuildFile; fileRef = E7DF1C88263E1484002C426E /* assets */; };
 		F6A9C76BD8BDEB9B48D07B87 /* libPods-the_cocktail_book-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC494DEF0533B422E5A04A6 /* libPods-the_cocktail_book-tvOSTests.a */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		DEC494DEF0533B422E5A04A6 /* libPods-the_cocktail_book-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-the_cocktail_book-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7330FCA2597E35D00FB9713 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E75A8FFF25C37BA30021C459 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		E7D8CB94289C8C2500732257 /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 		E7DF1C88263E1484002C426E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D8CB95289C8C2500732257 /* libswiftWebKit.tbd in Frameworks */,
 				A2A4EBFA280739F19DF1D299 /* libPods-the_cocktail_book.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +154,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7D8CB94289C8C2500732257 /* libswiftWebKit.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				B62FD78C4DC10314D778A4F2 /* libPods-the_cocktail_book.a */,
@@ -762,12 +766,16 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 7K5X34Z968;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = the_cocktail_book/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.8;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				MARKETING_VERSION = 1.0.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -790,11 +798,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 7K5X34Z968;
 				INFOPLIST_FILE = the_cocktail_book/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.8;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				MARKETING_VERSION = 1.0.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

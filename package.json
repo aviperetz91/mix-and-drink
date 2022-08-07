@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "start": "npx react-native start",
+    "start-no-cache": "npx react-native start --reset-cache",
     "android": "npx react-native run-android",
     "ios": "npx react-native run-ios",
+    "device-list": "xcrun xctrace list devices",
+    "iphone13": "npx react-native run-ios --simulator='iPhone 13'",
     "build:ios": "npx react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios",
     "test": "jest",
     "lint": "eslint ."

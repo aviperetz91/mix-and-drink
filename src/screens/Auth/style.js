@@ -75,9 +75,20 @@ const styles = StyleSheet.create({
         fontSize: 16,
         alignSelf: 'center',
     },
+    helperSmallText: {
+        marginTop: 12,
+        color: Colors.lightGrey,
+        fontWeight: '100',
+        fontSize: 14,
+        textAlign: 'center',
+    },
+    link: {
+        fontWeight: '300',
+        color: Colors.link
+    },
     modeText: {
         fontWeight: '400',
-        color: Colors.link
+        color: Colors.warning
     },
     alertContainer: {
         marginTop: 36,
