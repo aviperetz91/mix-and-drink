@@ -12,16 +12,48 @@ const Accordion = props => {
 
     const renderItem = (item) => {
         const checked = isMultiSelect ? checkedList.some(el => el === item) : item === selected;
-        return (
-            <CheckBox
-                containerStyle={styles.checkboxContainer}
-                title={item}
-                checkedColor={'white'}
-                checked={checked}
-                onPress={() => selectHandler(item)}
-                textStyle={{...styles.checkboxText, color: checked ? 'white' : '#a7a7a7' }}
-            />
-        )
+        if (isMultiSelect) {
+            return (
+                <CheckBox
+                    containerStyle={styles.checkboxContainer}
+                    title={item}
+                    checkedColor={'white'}
+                    checked={checked}
+                    onPress={() => selectHandler(item)}
+                    textStyle={{...styles.checkboxText, color: checked ? 'white' : '#a7a7a7' }}
+                />
+            )
+        } else {
+            return (
+                <CheckBox
+                    containerStyle={styles.checkboxContainer}
+                    title={item}
+                    checkedColor={'white'}
+                    checkedIcon={
+                        <Icon
+                          name="radio-button-checked"
+                          type="material"
+                          color="white"
+                          size={25}
+                          iconStyle={{ marginRight: 10 }}
+                        />
+                      }
+                      uncheckedIcon={
+                        <Icon
+                          name="radio-button-unchecked"
+                          type="material"
+                          color="#a7a7a7"
+                          size={25}
+                          iconStyle={{ marginRight: 10 }}
+                        />
+                      }
+                    checked={checked}
+                    onPress={() => selectHandler(item)}
+                    textStyle={{...styles.checkboxText, color: checked ? 'white' : '#a7a7a7' }}
+                />
+            )
+        }
+        
     }
 
     return (
