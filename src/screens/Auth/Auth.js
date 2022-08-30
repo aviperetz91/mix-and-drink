@@ -63,7 +63,7 @@ const Auth = props => {
                         <View style={styles.container}>
                             <View style={styles.colCenter}>
                                 <Icon type="FontAwesome5" name="glass-martini-alt" style={styles.mainIcon} />
-                                <Text style={styles.title}>MixDrinks</Text>
+                                <Text style={styles.title}>Mix & Drink</Text>
                                 <Text style={styles.subTitle}>Login or Create Your New Account</Text>
                             </View>
                             <View style={styles.m_y}>
@@ -107,11 +107,11 @@ const Auth = props => {
                                     By Clicking "Sign Up" I agree that I have read and accepted the 
                                     <Text 
                                         style={styles.link}
-                                        onPress={() => Linking.openURL('https://mixdrinks-user-agreement.herokuapp.com/')}
+                                        onPress={() => Linking.openURL('https://mixanddrink-user-agreement.herokuapp.com/')}
                                     > User Agreement</Text> & 
                                     <Text 
                                         style={styles.link}
-                                        onPress={() => Linking.openURL('https://www.freeprivacypolicy.com/live/1a890893-ec71-458b-9b8b-716b9e28d9c3')}
+                                        onPress={() => Linking.openURL('https://www.freeprivacypolicy.com/live/05699fea-b27e-4e4a-b9ab-2ce6e7fe239c')}
                                     > Privacy Policy</Text>.
                                 </Text>
                             }
