@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { View, TouchableOpacity } from 'react-native';
 import { Text, ListItem, Left, Body, Thumbnail, Icon } from 'native-base';
+import database from '@react-native-firebase/database';
 import Rating from '../Rating/Rating';
 import moment from 'moment';
 import avatar from '../../assets/images/avatar.jpg';
 import styles from './style';
-import storage from '@react-native-firebase/storage';
 import Colors from '../../constants/Colors';
 
 const ReviewItem = props => {
-
     const { 
         navigation, 
         review, 
@@ -22,16 +21,19 @@ const ReviewItem = props => {
         setDeletedReviewIndex,
     } = props;
     const { userId } = useSelector(state => state.user);
+    const [autorName, setAutorName] = useState();
     const [autorPhoto, setAutorPhoto] = useState();
 
     useEffect(() => {
-        getAutorPhoto()
+        getAutorDetails()
     }, [review])
 
-    const getAutorPhoto = async () => {
+    const getAutorDetails = async () => {
         if (!profileFlag) {
-            const url = await storage().ref(`/images/users/${review.userId}`).getDownloadURL();
-            setAutorPhoto(url);
+            const snapshot = await database().ref(`/users/${review.userId}`).once('value')
+            const autor = snapshot.val();
+            setAutorName(autor.userName)
+            setAutorPhoto(autor.userPhoto);
         }
     }
 
@@ -82,7 +84,7 @@ const ReviewItem = props => {
                 </TouchableOpacity>
             </Left>
             <Body style={styles.reviewBody}>
-                <Text onPress={navigateToProfile} style={styles.reviewAutor}>{profileFlag ? review.strDrink : review.autor}</Text>
+                <Text onPress={navigateToProfile} style={styles.reviewAutor}>{profileFlag ? review.strDrink : autorName}</Text>
                 <Text style={styles.reviewContent}>{review.content}</Text>
                 <View style={styles.bottomLine}>
                     {userId === review.userId && !profileFlag ?
