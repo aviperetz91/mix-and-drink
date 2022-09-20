@@ -1,20 +1,12 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
-    rowCenter: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    list: {
-        justifyContent: 'center', 
-        alignItems: 'center',
-        marginVertical: 16 
-    },
     ingredientContainer: {
-        marginBottom: 20,
+        marginBottom: 12,
         marginHorizontal: 2,
+        paddingTop: 8,
+        paddingBottom: 8
     },
     ingredientThumbnail: {
         width: 90,

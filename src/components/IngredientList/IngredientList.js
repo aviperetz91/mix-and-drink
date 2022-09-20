@@ -1,24 +1,46 @@
-import React from 'react';
-import { List, Text, ListItem, Left, Body, Right, Thumbnail } from 'native-base';
-import { IMAGES_URL } from '@env';
+import React, { Fragment } from 'react';
+import { FlatList } from 'react-native';
+import IngredientElement from '../IngredientElement/IngredientElement';
+import IngredientItem from '../IngredientItem/IngredientItem';
+
 
 const IngredientList = props => {
-    return (
-        <List>
-            {props.selectedCocktail.ingredientList.map((ingredient, index) => (
-                <ListItem thumbnail key={index}>
-                    <Left>
-                        <Thumbnail source={{ uri: `${IMAGES_URL}/ingredients/${ingredient}.png` }} />
-                    </Left>
-                    <Body>
-                        <Text style={{ fontSize: 16 }}>{ingredient}</Text>
-                    </Body>
-                    <Right>
-                        <Text note>{props.selectedCocktail.measureList[index]}</Text>
-                    </Right>
-                </ListItem>
-            ))}
-        </List>
+    const { ingredientList, isPreviewMode, selectHandler, checkedIngredients, selectedCocktail } = props;
+    const list = selectedCocktail ? selectedCocktail.ingredientList : ingredientList;
+    const preview_ingredients_number = 4;
+    
+    if(selectedCocktail) {
+        return (
+            <Fragment>
+                {list.map((ingredient, index) => {
+                    return (
+                        <IngredientItem 
+                            key={index.toString()} 
+                            ingredient={ingredient} 
+                            index={index} 
+                            selectedCocktail={selectedCocktail}
+                        /> 
+                    )})} 
+            </Fragment>
+        )
+    }
+    
+    return ( 
+        <FlatList
+            contentContainerStyle={{ backgroundColor: 'white' }}
+            keyExtractor={(item, index) => index.toString()}
+            data={isPreviewMode ? list : list.sort()}
+            numColumns={isPreviewMode ? preview_ingredients_number : null}
+            renderItem={({ item, index }) => isPreviewMode ? 
+                <IngredientElement ingredient={item} selectHandler={selectHandler} /> :  
+                <IngredientItem 
+                    ingredient={item} 
+                    index={index}
+                    selectHandler={selectHandler} 
+                    checkedIngredients={checkedIngredients} 
+                />
+            }
+        />
     )
 }
 

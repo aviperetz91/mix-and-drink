@@ -167,7 +167,7 @@ const Home = props => {
                                     <Icon name="chevron-forward-outline" style={styles.seconaryText} />
                                     </Text>
                                 </TouchableOpacity>
-                                <Ingredients navigation={navigation} slice />
+                                <Ingredients navigation={navigation} isPreviewMode />
                             </View>
                             {highestRated && highestRated.length > 0 &&
                                 <View>
