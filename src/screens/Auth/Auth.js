@@ -107,11 +107,11 @@ const Auth = props => {
                                     By Clicking "Sign Up" I agree that I have read and accepted the 
                                     <Text 
                                         style={styles.link}
-                                        onPress={() => Linking.openURL('https://mixanddrink-user-agreement.herokuapp.com/')}
+                                        onPress={() => Linking.openURL('https://mix-and-drink-user-agreement.herokuapp.com/')}
                                     > User Agreement</Text> & 
                                     <Text 
                                         style={styles.link}
-                                        onPress={() => Linking.openURL('https://www.freeprivacypolicy.com/live/05699fea-b27e-4e4a-b9ab-2ce6e7fe239c')}
+                                        onPress={() => Linking.openURL('https://www.freeprivacypolicy.com/live/4034f7b5-4783-4452-9863-fe3ed9e22487')}
                                     > Privacy Policy</Text>.
                                 </Text>
                             }
