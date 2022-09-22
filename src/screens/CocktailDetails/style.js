@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
         top: 290,
-        left: Platform.OS === 'ios' ? 310 : 325,
+        right: 30,
         width: 45,
         height: 45,
         borderRadius: 50,

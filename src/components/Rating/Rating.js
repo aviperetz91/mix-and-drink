@@ -15,7 +15,7 @@ const Rating = props => {
                 type="custom"                
                 startingValue={rating ? rating : 0}
                 showRating={false}
-                imageSize={large ? 17 : 14}
+                imageSize={large ? 18 : 16}
             />
             {!hideCounter && <Text style={styles.ratingValue}>{counter ? `  (${counter})` : `  (0)`}</Text>}
         </View>

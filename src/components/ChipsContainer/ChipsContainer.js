@@ -33,7 +33,7 @@ const ChipsContainer = props => {
                         onPress={clearCheckList}
                     >
                         <Text style={styles.buttonText}>
-                            Clear All
+                            Clear
                         </Text>
                     </Button>
                     <Button

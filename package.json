@@ -9,6 +9,8 @@
     "ios": "npx react-native run-ios",
     "device-list": "xcrun xctrace list devices",
     "iphone13": "npx react-native run-ios --simulator='iPhone 13'",
+    "iphone13-pro-max": "npx react-native run-ios --simulator='iPhone 13 Pro Max'",
+    "iphone8-plus": "npx react-native run-ios --simulator='iPhone 8 Plus (15.5)'",
     "build:ios": "npx react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios",
     "test": "jest",
     "lint": "eslint ."

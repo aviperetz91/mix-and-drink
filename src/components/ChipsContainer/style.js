@@ -3,6 +3,7 @@ import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
     chipsContainer: {
+        backgroundColor: 'black',
         padding: 2,
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -17,6 +18,7 @@ const styles = StyleSheet.create({
         color: Colors.dark
     },
     buttonsRow: {
+        backgroundColor: 'black',
         paddingVertical: 6,
         paddingHorizontal: 12,
         borderBottomWidth: 1,
@@ -29,6 +31,7 @@ const styles = StyleSheet.create({
         borderRadius: 2
     },
     buttonText: {
+        textTransform: 'uppercase',
         color: 'white'
     }
 });
