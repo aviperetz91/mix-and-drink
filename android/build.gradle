@@ -4,8 +4,8 @@ buildscript {
     ext {
         buildToolsVersion = "30.0.2"
         minSdkVersion = 21
-        compileSdkVersion = 30
-        targetSdkVersion = 30
+        compileSdkVersion = 33
+        targetSdkVersion = 33
     }
     repositories {
         google()
@@ -20,6 +20,11 @@ buildscript {
 }
 
 allprojects {
+    configurations.all {
+        resolutionStrategy {
+            force "com.facebook.react:react-native:0.63.2"
+        }
+    }
     repositories {
         mavenLocal()
         maven {
